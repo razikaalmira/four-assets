@@ -144,12 +144,7 @@ gold_temp = """
     """
 
 
-if __name__ == "__main__":
-    # df_2019 = get_monthly_cpi('https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2/key')
-    # df_2023 = get_monthly_cpi('https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/1709/key')
-    # df_2024 = get_monthly_cpi('https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2261/key')
-    # cpi = pd.concat([df_2019,df_2023,df_2024],ignore_index=True)
-    
+if __name__ == "__main__":   
     conn, cur, engine = init_connection()
 
     create_table(conn,cur,cpi_temp)
@@ -158,14 +153,14 @@ if __name__ == "__main__":
     create_table(conn,cur,usd_temp)
     create_table(conn,cur,gold_temp)
 
-    # cpi_links = ['https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2/key',
-    #         'https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/1709/key',
-    #         'https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2261/key']
+    cpi_links = ['https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2/key',
+            'https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/1709/key',
+            'https://webapi.bps.go.id/v1/api/list/model/data/lang/ind/domain/0000/var/2261/key']
 
-    # cpi_list = [get_monthly_cpi(link) for link in cpi_links]
-    # cpi = pd.concat(cpi_list,ignore_index=True)
+    cpi_list = [get_monthly_cpi(link) for link in cpi_links]
+    cpi = pd.concat(cpi_list,ignore_index=True)
 
-    # insert_to_table(conn,cpi,'cpi')
+    insert_to_table(conn,cpi,'cpi')
 
     for name,directory in csv_files.items():
         df = pd.read_csv(directory)
