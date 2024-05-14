@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: dev
+    database: assets_db
+    schema: dev
+    tables:
+      - name: btc
+      - name: cpi
+      - name: gold
+      - name: ihsg
+      - name: usd

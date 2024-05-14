@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: btc_daily
+    description: "Daily trading data of bitcoin."
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+      - name: closing
+        tests:
+          - non_negative
+      - name: opening
+        tests:
+          - non_negative
+      - name: high
+        tests:
+          - non_negative
+      - name: low
+        tests:
+          - non_negative
+
+  - name: usd_daily
+    description: "Daily trading data of USD to IDR."
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+      - name: closing
+        tests:
+          - non_negative
+      - name: opening
+        tests:
+          - non_negative
+      - name: high
+        tests:
+          - non_negative
+      - name: low
+        tests:
+          - non_negative
+
+  - name: ihsg_daily
+    description: "Daily trading data of IHSG."
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+      - name: closing
+        tests:
+          - non_negative
+      - name: opening
+        tests:
+          - non_negative
+      - name: high
+        tests:
+          - non_negative
+      - name: low
+        tests:
+          - non_negative
+
+  - name: gold_daily
+    description: "Daily trading data of gold."
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+      - name: closing
+        tests:
+          - non_negative
+      - name: opening
+        tests:
+          - non_negative
+      - name: high
+        tests:
+          - non_negative
+      - name: low
+        tests:
+          - non_negative
+
+  - name: cpi_monthly
+    description: "Monthly Indonesia CPI."
+    columns:
+      - name: cpi
+        tests:
+          - non_negative
+      - name: monthdate
+        tests:
+          - unique
+          - not_null
