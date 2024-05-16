@@ -50,9 +50,8 @@ def lower_columnnames(dataframe_list):
         df.columns = [x.lower() for x in df.columns]
 
 def init_connection():
-    # create connection
+    # create connection to postgresql dev schema
     conn = psycopg2.connect(**param_database,options='-csearch_path=dbo,dev')
-    # create cursor
     cur = conn.cursor()
     conn_string = f"postgresql://{param_database['user']}:{param_database['password']}@{param_database['host']}/{param_database['dbname']}?options=-csearch_path%3Ddbo,dev"
     engine = create_engine(conn_string).connect()
