@@ -1,6 +1,6 @@
 __pycache__/
 *.ini
-.pdf
+*.pdf
 .ipynb_checkpoints/
 logs/
 four-assets-project-b8195ded184f.json
