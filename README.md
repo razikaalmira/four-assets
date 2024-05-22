@@ -1,6 +1,6 @@
 # Four Assets Project
 ## ELT Architecture & Data Sources
-![image](https://github.com/razikaalmira/four-assets/blob/main/csv_files/four_assets.drawio%20(6))
+![image](https://github.com/razikaalmira/four-assets/blob/main/csv_files/four_assets.drawio(6).png)
 1. CPI data is extracted from BPS API with Python, while other data (Bitcoin, IHSG, USD to IDR, Gold) is downloaded from investing.com.
 2. All data is loaded directly to PostgreSQL Dev schema, all raw with no transformations.
 3. Dbt performs data validation, data type conversion, and other necessary transformation.
